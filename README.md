@@ -42,47 +42,21 @@ This is crucial. It won't work without an API key. You can get one from OpenWeat
 
 ### 4. Configure Environment Variables
 
-Copy the example environment file:
-
-```bash
-cp .env.example .env
-```
-
-Edit `.env` and add your OpenWeatherMap API key:
+Tl;Dr You don't need to. This repo has a .env with a free tier OpenWeatherMap API key. If you have your
+own that you want to use, edit the add your OpenWeatherMap API key:
 
 ```
 OPENWEATHER_API_KEY=your_actual_api_key_here
 ```
 
-### 5. Setup Database
+But so long as this hasn't received heavy use on any given day, the included free tier key should work fine.
 
-```bash
-rails db:create
-rails db:migrate
-```
+### 5. Start the Application
 
-### 6. Enable Caching (Development)
-
-```bash
-rails dev:cache
-```
-
-### 7. Start the Application
-
-The easiest way to start the app, at least in a dev environment, is to use `bin/dev` to start both Rails and Tailwind CSS compilation:
+Assuming the bundle install worked without a problem, you should be able to just start the application as follows and it'll work on your system:
 
 ```bash
 bin/dev
-```
-
-To do it manually and separately (requires 2 terminal windows/tabs):
-
-```bash
-# Terminal 1: Start Rails server
-rails server
-
-# Terminal 2: Watch for Tailwind CSS changes
-rails tailwindcss:watch
 ```
 
 The application defaults to running on `http://localhost:3000`.
